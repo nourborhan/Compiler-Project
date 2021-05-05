@@ -23,3 +23,7 @@ class Print():
 
     def eval(self):
         print(self.value.eval())
+
+class Program():
+    def __init__(self, value):
+        self.value = value

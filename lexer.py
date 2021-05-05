@@ -7,7 +7,7 @@ class Lexer():
 
     def _add_tokens(self):
         # Arithmetic Operators
-        self.lexer.add('SUM', r'\+')
+        self.lexer.add("SUM", r'\+')
         self.lexer.add("MINUS", r'\-')
         self.lexer.add("MULT", r'\*')
         self.lexer.add("DIV", r'\/')
@@ -22,7 +22,7 @@ class Lexer():
         self.lexer.add("LessThan", r'\<')
         self.lexer.add("MoreThan", r'\>')
         # Numbers
-        self.lexer.add('NUMBER', r'\d+')
+        self.lexer.add("NUMBER", r'\d+')
         # Ignore spaces
         self.lexer.ignore('\s+')
 
@@ -30,10 +30,10 @@ class Lexer():
         self.lexer.add("Inheritance", r'\InferedFrom')
         self.lexer.add("Condition", r'\WhetherDo')
         self.lexer.add("ElseCondition", r'\Else')
-        self.lexer.add("Integer",r'\Ire')
-        self.lexer.add("SInteger",r'\Sire')
-        self.lexer.add("Character",r'\Clo')
-        self.lexer.add("String",r'\SetOfClo')
+        self.lexer.add("Integer", r'\Ire')
+        self.lexer.add("SInteger", r'\Sire')
+        self.lexer.add("Character", r'\Clo')
+        self.lexer.add("String", r'\SetOfClo')
         self.lexer.add("Float", r'\FBU')
         self.lexer.add("SFloat", r'\SFBU')
         self.lexer.add("Void", r'\NoneValue')
