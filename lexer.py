@@ -59,6 +59,8 @@ class Lexer():
         self.lexer.add("LineDelimiter", r'\;')
         self.lexer.add("OpenBrace", r'\(')
         self.lexer.add("CloseBrace", r'\)')
+        self.lexer.add("Identifier", r'\w+')
+
 
 
 
