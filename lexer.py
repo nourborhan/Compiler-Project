@@ -21,6 +21,9 @@ class Lexer():
         self.lexer.add("EQUALS", r'\==')
         self.lexer.add("LessThan", r'\<')
         self.lexer.add("MoreThan", r'\>')
+        self.lexer.add("NOTEQUAL", r'\!=')
+        self.lexer.add("LessThanOrEqual", r'\<=')
+        self.lexer.add("MoreThanOrEqual", r'\>=')
         # Numbers
         self.lexer.add("NUMBER", r'\d+')
         # Ignore spaces
@@ -53,13 +56,18 @@ class Lexer():
         self.lexer.add("DoubleQuote", r'\"')
         self.lexer.add("SingleQuote", r"\'")
         self.lexer.add("Inclusion", r'\Using')
-        self.lexer.ignore("MultiLineComment", r'\/#[^#/]+#\/')
-        self.lexer.ignore("SingleComment", r'\/-.*')
+        self.lexer.add("MultiLineCommentOpen", r'\/#')
+        self.lexer.add("MultiLineCommentClose", r'\#/')
+        self.lexer.add("SingleComment", r'/-')
         self.lexer.add("TokenDelimiter", r'\@')
         self.lexer.add("LineDelimiter", r'\;')
         self.lexer.add("OpenBrace", r'\(')
         self.lexer.add("CloseBrace", r'\)')
         self.lexer.add("ID", r'\w+')
+        self.lexer.add("Empty", r'\empty')
+        self.lexer.add("Comma", r'\,')
+        self.lexer.add("Read", r'\read')
+        self.lexer.add("Write", r'\write')
 
 
 
