@@ -42,8 +42,8 @@ class Lexer():
         self.lexer.add("Return", r'\BackedValue')
         self.lexer.add("Struct", r'\STT')
         self.lexer.add("Switch", r'\Check-CaseOf')
-        self.lexer.add("Start Statement", r'\Beginning')
-        self.lexer.add("End Statement", r'\End')
+        self.lexer.add("Start_Statement", r'\Beginning')
+        self.lexer.add("End_Statement", r'\End')
         self.lexer.add("Assign", r'\=')
         self.lexer.add("Access", r'\.')
         self.lexer.add("CurlyOpen", r'\{')
@@ -59,7 +59,7 @@ class Lexer():
         self.lexer.add("LineDelimiter", r'\;')
         self.lexer.add("OpenBrace", r'\(')
         self.lexer.add("CloseBrace", r'\)')
-        self.lexer.add("Identifier", r'\w+')
+        self.lexer.add("ID", r'\w+')
 
 
 
