@@ -20,6 +20,16 @@ class Parser():
         @self.pg.production('program : Start_Statement LineDelimiter Class LineDelimiter End_Statement')
         @self.pg.production('program: SingleComment LineDelimiter using_command')
         def program(p):
+            start = p[0]
+            if start.gettokentype() == 'Start_Statement':
+                if p[1] == 'LineDelimiter':
+                    if p[2] == 'Class':
+                       if p[3] == 'LineDelimiter':
+                           if p[4] == 'End_Statement':
+                               
+
+
+
 
 
         @self.pg.production('ClassDeclaration: Class TokenDelimiter ID CurlyOpen Class_Implementation CurlyClose')
