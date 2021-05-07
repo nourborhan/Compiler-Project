@@ -28,6 +28,7 @@ class Lexer():
         self.lexer.add("LessThan", r'\<')
         self.lexer.add("MoreThanOrEqual", r'>=')
         # Numbers
+        self.lexer.add("DECIMAL", r'\d+(\.\d{1,2})?')
         self.lexer.add("NUMBER", r'\d+')
         # Ignore spaces
         self.lexer.ignore('\s+')
