@@ -6,7 +6,7 @@ class Lexer():
         self.lexer = LexerGenerator()
 
     def _add_tokens(self):
-        
+        self.lexer.ignore(r'\d\w+')
         
         # Arithmetic Operators
         self.lexer.add("SUM", r'\+')
@@ -71,6 +71,7 @@ class Lexer():
         self.lexer.add("Read", r'read')
         self.lexer.add("Write", r'write')
 
+        
         self.lexer.add("ID", r'\w+')
 
     def get_lexer(self):

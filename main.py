@@ -3,7 +3,7 @@ from lexer import Lexer
 
 
 text_input = """
-)
+RingWhen (x < y) { BackedValue 2; }
 """
 
 lexer = Lexer().get_lexer()
