@@ -71,6 +71,7 @@ class Lexer():
         self.lexer.add("Comma", r'\,')
         self.lexer.add("Read", r'read')
         self.lexer.add("Write", r'write')
+        self.lexer.add("txt", r'txt')
 
         
         self.lexer.add("ID", r'\w+')

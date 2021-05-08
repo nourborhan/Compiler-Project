@@ -1,10 +1,18 @@
 from lexer import Lexer
-# from parserTB import Parser
+from parserTB import Parser
 
 
+# text_input = """
+# Ire@X=2;
+# FBU@Y=2.2;
+# """
+
+
+# text_input = """
+# Beginning;Division;End
+# """
 text_input = """
-Ire@X=2;
-FBU@Y=2.2;
+Ire
 """
 
 lexer = Lexer().get_lexer()
@@ -29,5 +37,10 @@ for line in lines:
     LineNumber += 1
     TokenNumber = 1
 
-for obj in TokenStream:
-    print(obj)
+# for obj in TokenStream:
+#     print(obj)
+
+pg = Parser()
+pg.parse()
+parser = pg.get_parser()
+parser.parse(tokens)  
