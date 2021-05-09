@@ -1,22 +1,32 @@
-# class Parser_Output():
-#     ListOfLines = []
-#     def Output_Formation(TokenStream,isMatch,Rule):
+class Parser_Output():
 
-#         LineNumber = 0
-#         for token in TokenStream:
-#             if token["Line No"] > LineNumber:
-#                 LineNumber = token["Line No"]
+    def __init__(self, TokenStream):
+        self.TokenStream = TokenStream
 
-#         lineCount = 1
-#         for line in range(LineNumber):
-#             singleLine = {
-#                 "Line NO": lineCount,
-#                 "Matchability": isMatch,
-#                 "Rule Used": Rule
-#             }
-#             ListOfLines.append(singleLine)
-#             lineCount += 1
-#         return ListOfLines
+
+
+    def Output_Formation(self, isMatch, Rule, LineNumber):
+        # TokenLineNo = []
+        # ListOfLines = []
+        # for token in self.TokenStream:
+        #     TokenLineNo.append(token["Line No"])
+
+        # for LineNo in TokenLineNo:
+        #     if LineNo > LineNumber:
+        #         LineNumber = LineNo
+
+        # lineCount = 1
+        # for line in range(LineNumber):
+        singleLine = {
+            "Line NO": LineNumber,
+            "Matchability": isMatch,
+            "Rule Used": Rule
+        }
+            # ListOfLines.append(singleLine)
+            # lineCount += 1
+        return singleLine
+
+
 # class Number():
 #     def __init__(self, value):
 #         self.value = value

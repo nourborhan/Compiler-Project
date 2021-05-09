@@ -1,14 +1,19 @@
 from lexer import Lexer
 from parserTB import Parser
+from ast import Parser_Output
 
 
 # text_input = """
-# Ire@X=2;
-# FBU@Y=2.2;
-# """
-
-# text_input = """
-# Beginning;Division;End
+# Beginning;
+# Division@x{
+#     Ire@decrease(){
+#         Ire@reg3=5;
+#         RingWhen(counter < num){
+#             reg3 = reg3 -1;
+#         }
+#     }
+# }
+# End
 # """
 
 text_input = """
@@ -35,17 +40,32 @@ for line in lines:
             "Matchability": "Matched"
         }
         TokenStream.append(SingleToken)
-        TokenNumber += 1
-    LineNumber += 1
+        TokenNumber = TokenNumber + 1
+    pg = Parser()
+    pg.parse(TokenStream,LineNumber)
+    LineNumber = LineNumber + 1
     TokenNumber = 1
 
-for obj in TokenStream:
-    print(obj)
+for line in TokenStream:
+    print(line)
+
+parser = pg.get_parser()
+parser.parse(tokens)
+
+# for obj in TokenStream:
+#    print(obj)
+
+# print(lineno)
+# TokenLines = TokenStream["Line No"]
+
+# print(TokenStream)
+    
 
 # for token in tokens:
 #     print(token)
 
-pg = Parser()
-pg.parse()
-parser = pg.get_parser()
-parser.parse(tokens)
+# pg = Parser()
+# pg.parse(TokenStream)
+# parser = pg.get_parser()
+# parser.parse(tokens)
+

@@ -35,7 +35,7 @@ class Lexer():
 
         self.lexer.add("Class", r'Division')
         self.lexer.add("Inheritance", r'InferedFrom')
-        self.lexer.add("Condition", r'WhetherDo')
+        self.lexer.add("IfCondition", r'WhetherDo')
         self.lexer.add("ElseCondition", r'Else')
         self.lexer.add("Integer", r'Ire')
         self.lexer.add("SInteger", r'Sire')
