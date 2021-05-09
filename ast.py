@@ -1,3 +1,22 @@
+# class Parser_Output():
+#     ListOfLines = []
+#     def Output_Formation(TokenStream,isMatch,Rule):
+
+#         LineNumber = 0
+#         for token in TokenStream:
+#             if token["Line No"] > LineNumber:
+#                 LineNumber = token["Line No"]
+
+#         lineCount = 1
+#         for line in range(LineNumber):
+#             singleLine = {
+#                 "Line NO": lineCount,
+#                 "Matchability": isMatch,
+#                 "Rule Used": Rule
+#             }
+#             ListOfLines.append(singleLine)
+#             lineCount += 1
+#         return ListOfLines
 # class Number():
 #     def __init__(self, value):
 #         self.value = value

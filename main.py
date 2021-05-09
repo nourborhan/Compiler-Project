@@ -7,12 +7,14 @@ from parserTB import Parser
 # FBU@Y=2.2;
 # """
 
-
 # text_input = """
 # Beginning;Division;End
 # """
+
 text_input = """
-Ire
+Beginning;
+Division@main{Ire@X;};
+End
 """
 
 lexer = Lexer().get_lexer()
@@ -37,10 +39,13 @@ for line in lines:
     LineNumber += 1
     TokenNumber = 1
 
-# for obj in TokenStream:
-#     print(obj)
+for obj in TokenStream:
+    print(obj)
+
+# for token in tokens:
+#     print(token)
 
 pg = Parser()
 pg.parse()
 parser = pg.get_parser()
-parser.parse(tokens)  
+parser.parse(tokens)
