@@ -16,7 +16,7 @@ class Parser_Output():
         #         LineNumber = LineNo
 
         # lineCount = 1
-        print ("{:20} {:<20} {:<20}".format('Line Number', 'Rule Used ', 'Matchability'))
+        
         # for line in range(LineNumber):
         print ("{:<20} {:<20} {:<21}".format(LineNumber, Rule, isMatch))
         # singleLine = {

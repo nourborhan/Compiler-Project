@@ -1,6 +1,8 @@
 from lexer import Lexer
 from parserTB import Parser
 from ast import Parser_Output
+import warnings
+warnings.filterwarnings("ignore")
 
 
 
@@ -52,7 +54,7 @@ End
 # for key, value in dict.items():
 #     LineNO, Lexeme, Return_Token,Lexeme_NO_in_Line,matchability= value
     
-
+print("Scanner output \n")
 
 print ("{:<10} {:<10} {:<20} {:<20} {:<10}".format('LineNO', 'Lexeme ', 'Token','Lexeme in line number','Matchability'))
 lexer = Lexer().get_lexer()
@@ -77,7 +79,7 @@ for line in lines:
         }
 
         TokenStream.append(SingleToken)
-        TokenNumber = TokenNumber + 1
+        TokenNumber = TokenNumber + 1    
     pg = Parser()
     pg.parse(TokenStream,LineNumber)
     LineNumber = LineNumber + 1
@@ -85,7 +87,9 @@ for line in lines:
 
 # for line in TokenStream:
 #     print(line)
-
+print("\n")
+print("Parser Output \n")
+print ("{:20} {:<20} {:<20}".format('Line Number', 'Rule Used ', 'Matchability'))
 parser = pg.get_parser()
 parser.parse(tokens)
 
