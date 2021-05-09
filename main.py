@@ -11,16 +11,16 @@ from ast import Parser_Output
 #         break
 
 
-lines = []
-while True:
-    line = input()
-    if line:
-        lines.append(line)
-    elif line == "End":
-        break
-    else:
-        break
-text_input = '\n'.join(lines)
+# lines = []
+# while True:
+#     line = input()
+#     if line:
+#         lines.append(line)
+#     elif line == "End":
+#         break
+#     else:
+#         break
+# text_input = '\n'.join(lines)
 
 # text_input = """
 # Beginning;Division@main{Ire@X;};End
@@ -40,12 +40,21 @@ text_input = '\n'.join(lines)
 # End
 # """
 
-# text_input = """
-# Beginning;
-# Division@main{Ire@X;};
-# End
-# """
+text_input = """
+Beginning;
+Division@main{Ire@X;};
+End
+"""
 
+
+
+# print each data item.
+# for key, value in dict.items():
+#     LineNO, Lexeme, Return_Token,Lexeme_NO_in_Line,matchability= value
+    
+
+
+print ("{:<10} {:<10} {:<20} {:<20} {:<10}".format('LineNO', 'Lexeme ', 'Token','Lexeme in line number','Matchability'))
 lexer = Lexer().get_lexer()
 tokens = lexer.lex(text_input)
 lines = tokens.s.splitlines()
@@ -56,6 +65,9 @@ TokenNumber = 1
 for line in lines:
     LineTokens = lexer.lex(line)
     for token in LineTokens:
+
+        print ("{:<10} {:<10} {:<21} {:<21} {:<10}".format(LineNumber, token.value, token.name,TokenNumber,"Matched"))
+
         SingleToken = {
             "Line No": LineNumber,
             "Lexeme": token.value,
@@ -63,6 +75,7 @@ for line in lines:
             "Lexeme NO in line": TokenNumber,
             "Matchability": "Matched"
         }
+
         TokenStream.append(SingleToken)
         TokenNumber = TokenNumber + 1
     pg = Parser()
@@ -70,8 +83,8 @@ for line in lines:
     LineNumber = LineNumber + 1
     TokenNumber = 1
 
-for line in TokenStream:
-    print(line)
+# for line in TokenStream:
+#     print(line)
 
 parser = pg.get_parser()
 parser.parse(tokens)
