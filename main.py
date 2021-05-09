@@ -3,6 +3,30 @@ from parserTB import Parser
 from ast import Parser_Output
 
 
+
+
+# for line in sys.stdin:
+#     text_input = line
+#     if text_input == "End":
+#         break
+
+
+lines = []
+while True:
+    line = input()
+    if line:
+        lines.append(line)
+    elif line == "End":
+        break
+    else:
+        break
+text_input = '\n'.join(lines)
+
+# text_input = """
+# Beginning;Division@main{Ire@X;};End
+# """
+
+
 # text_input = """
 # Beginning;
 # Division@x{
@@ -16,11 +40,11 @@ from ast import Parser_Output
 # End
 # """
 
-text_input = """
-Beginning;
-Division@main{Ire@X;};
-End
-"""
+# text_input = """
+# Beginning;
+# Division@main{Ire@X;};
+# End
+# """
 
 lexer = Lexer().get_lexer()
 tokens = lexer.lex(text_input)
