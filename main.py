@@ -44,9 +44,11 @@ warnings.filterwarnings("ignore")
 
 text_input = """
 Beginning;
-Division@main{Ire@X;};
+Division@main{Ire@X(empty);};
 End
 """
+
+
 
 
 
@@ -56,7 +58,7 @@ End
     
 print("Scanner output \n")
 
-print ("{:<10} {:<10} {:<20} {:<20} {:<10}".format('LineNO', 'Lexeme ', 'Token','Lexeme in line number','Matchability'))
+print ("{:<10} {:<10} {:<20} {:<25} {:<10}".format('LineNO', 'Lexeme ', 'Token','Lexeme in line number','Matchability'))
 lexer = Lexer().get_lexer()
 tokens = lexer.lex(text_input)
 lines = tokens.s.splitlines()
@@ -68,7 +70,7 @@ for line in lines:
     LineTokens = lexer.lex(line)
     for token in LineTokens:
 
-        print ("{:<10} {:<10} {:<21} {:<21} {:<10}".format(LineNumber, token.value, token.name,TokenNumber,"Matched"))
+        print ("{:<10} {:<10} {:<21} {:<25} {:<10}".format(LineNumber, token.value, token.name,TokenNumber,"Matched"))
 
         SingleToken = {
             "Line No": LineNumber,
