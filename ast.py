@@ -1,8 +1,7 @@
 class Parser_Output():
 
-    def __init__(self, TokenStream):
-        self.TokenStream = TokenStream
-
+    # def __init__(self):
+    #     self.value = value
 
 
     def Output_Formation(self, isMatch, Rule, LineNumber):

@@ -1,6 +1,6 @@
 from lexer import Lexer
 from parserTB import Parser
-from ast import Parser_Output
+# from ast import Parser_Output
 import warnings
 warnings.filterwarnings("ignore")
 
@@ -13,19 +13,21 @@ warnings.filterwarnings("ignore")
 #         break
 
 
-# lines = []
-# while True:
-#     line = input()
-#     if line:
-#         lines.append(line)
-#     elif line == "End":
-#         break
-#     else:
-#         break
-# text_input = '\n'.join(lines)
+lines = []
+while True:
+    line = input()
+    if line:
+        lines.append(line)
+    elif line == "End":
+        break
+    else:
+        break
+text_input = '\n'.join(lines)
 
 # text_input = """
-# Beginning;Division@main{Ire@X;};End
+# Beginning;
+# Division@main{Ire@X;};
+# End
 # """
 
 
@@ -42,11 +44,11 @@ warnings.filterwarnings("ignore")
 # End
 # """
 
-text_input = """
-Beginning;
-Division@main{Ire@X(empty);};
-End
-"""
+# text_input = """
+# Beginning;
+# Division@main{Ire@X(empty);};
+# End
+# """
 
 
 
@@ -63,29 +65,29 @@ lexer = Lexer().get_lexer()
 tokens = lexer.lex(text_input)
 lines = tokens.s.splitlines()
 
-TokenStream = []
-LineNumber = 0
+# TokenStream = []
+SingleToken = {}
+LineNumber = 1
 TokenNumber = 1
+counter = 0
 for line in lines:
     LineTokens = lexer.lex(line)
     for token in LineTokens:
 
         print ("{:<10} {:<10} {:<21} {:<25} {:<10}".format(LineNumber, token.value, token.name,TokenNumber,"Matched"))
 
-        SingleToken = {
-            "Line No": LineNumber,
-            "Lexeme": token.value,
-            "Return Token": token.name,
-            "Lexeme NO in line": TokenNumber,
-            "Matchability": "Matched"
-        }
+        SingleToken[counter] = [LineNumber,token]
 
-        TokenStream.append(SingleToken)
-        TokenNumber = TokenNumber + 1    
+        # TokenStream.append(SingleToken)
+        TokenNumber = TokenNumber + 1
+        counter = counter + 1    
     pg = Parser()
-    pg.parse(TokenStream,LineNumber)
+    pg.parse(SingleToken)
     LineNumber = LineNumber + 1
     TokenNumber = 1
+
+# for key,value in SingleToken.items():
+#     print(value)
 
 # for line in TokenStream:
 #     print(line)
@@ -94,6 +96,10 @@ print("Parser Output \n")
 print ("{:20} {:<20} {:<20}".format('Line Number', 'Rule Used ', 'Matchability'))
 parser = pg.get_parser()
 parser.parse(tokens)
+
+# for TokenLine in lines:
+#     TokenizedLine = lexer.lex(TokenLine)
+#     parser.parse(TokenizedLine)
 
 # for obj in TokenStream:
 #    print(obj)
