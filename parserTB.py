@@ -1,9 +1,4 @@
 from rply import ParserGenerator
-# from ast import Print
-# from ast import Parser_Output
-
-#       ['NUMBER', 'PRINT', 'OPEN_PAREN', 'CLOSE_PAREN',
-#              'SEMI_COLON', 'SUM']
 
 class Parser():
 
@@ -29,22 +24,10 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
                         if(LineToken == token):
                             print(self.Output_Formation("True","Program",LineNumber))
                             found = True 
                             break              
-                # elif start.name == "SingleComment":
-                #     
-                #     return print(self.Output_Formation("True","Program",LineNumber)) 
-                    # return print("Rule Used: Program")
-                # start = p[0]
-                # if start.gettokentype() == 'Start_Statement' and p[1].name == 'LineDelimiter' and p[2].name == 'Class' and p[3].name == 'LineDelimiter' and p[4].name == 'End_Statement':
-                #     return print("Match: Rule Used: Program")
-                # elif start.gettokentype() == 'Start_Statement' and p[1].name == 'LineDelimiter' and p[2].name == 'using_command':
-                #     return print("Match: Rule Used: Program")
-                # else:
-                #      return print("program")
                        
                 
             @self.pg.production('Type : Integer')
@@ -55,13 +38,11 @@ class Parser():
             @self.pg.production('Type : SFloat')
             @self.pg.production('Type : Void')
             def Type(p):
-                # return print("Rule Used: Type")
                 found = False
                 
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
                         if(LineToken == token):
                             print(self.Output_Formation("True","Type",LineNumber))
                             found = True 
@@ -77,16 +58,13 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
                         if(LineToken == token):
                             print(self.Output_Formation("True","Class_Decl",LineNumber))
                             found = True 
                             break
                     if(found):
                         break
-                # return print("Rule Used: Class_Decl") 
 
-            # @self.pg.production('Class_Implementation : Var_Declaration Class_Implementation')
             @self.pg.production('Class_Implementation : Var_Declaration')
             @self.pg.production('Class_Implementation : Method_Declaration')
             @self.pg.production('Class_Implementation : SingleComment')
@@ -98,15 +76,12 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
                         if(LineToken == token):
                             print(self.Output_Formation("True","Class_Imp",LineNumber))
                             found = True 
                             break
                     if(found):
                         break
-                # return print(self.Output_Formation("True","Class_Implementation",LineNumber)) 
-                # return print("Rule Used: Class_Implement")
 
 
             @self.pg.production('Method_Declaration : Func_Decl LineDelimiter')
@@ -116,7 +91,6 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
                         if(LineToken == token):
                             print(self.Output_Formation("True","Method_Declaration",LineNumber))
                             found = True 
@@ -131,7 +105,6 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
                         if(LineToken == token):
                             print(self.Output_Formation("True","Func_Decl",LineNumber))
                             found = True 
@@ -148,7 +121,6 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
                         if(LineToken == token):
                             print(self.Output_Formation("True","Par_List",LineNumber))
                             found = True 
@@ -164,7 +136,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Non_Empty_List",LineNumber))
                             found = True 
@@ -175,13 +147,12 @@ class Parser():
             @self.pg.production('ID_List : ID')
             # @self.pg.production('ID_List : ID_List Comma ID')
             def ID_List(p):
-                # return print("Rule Used: ID_List")
                 
                 found = False
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","ID_List",LineNumber))
                             found = True 
@@ -190,7 +161,6 @@ class Parser():
                         break 
 
             @self.pg.production('Var_Declaration : Empty')
-            # @self.pg.production('Var_Declaration : Type TokenDelimiter ID_List LineDelimiter Var_Declaration')
             @self.pg.production('Var_Declaration : Type TokenDelimiter ID_List LineDelimiter')
             def Var_Declaration(p):
                 found = False
@@ -198,7 +168,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Var_Decl",LineNumber))
                             found = True 
@@ -214,7 +184,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Statements",LineNumber))
                             found = True 
@@ -236,7 +206,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Statement",LineNumber))
                             found = True 
@@ -252,7 +222,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Assignment",LineNumber))
                             found = True 
@@ -267,7 +237,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Func_Call",LineNumber))
                             found = True 
@@ -283,7 +253,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Arg_List",LineNumber))
                             found = True 
@@ -299,7 +269,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","NonEmpty_ArgList",LineNumber))
                             found = True 
@@ -314,7 +284,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","BlockStatements",LineNumber))
                             found = True 
@@ -330,7 +300,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","WhetehrDo",LineNumber))
                             found = True 
@@ -347,7 +317,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Cond_Expr",LineNumber))
                             found = True 
@@ -363,7 +333,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Condition_Op",LineNumber))
                             found = True 
@@ -378,7 +348,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Condition",LineNumber))
                             found = True 
@@ -399,7 +369,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Comp_Op",LineNumber))
                             found = True 
@@ -414,7 +384,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","RingWhen",LineNumber))
                             found = True 
@@ -430,7 +400,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","BackedValue",LineNumber))
                             found = True 
@@ -446,7 +416,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Terminate",LineNumber))
                             found = True 
@@ -463,7 +433,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Expression",LineNumber))
                             found = True 
@@ -480,7 +450,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Add_Op",LineNumber))
                             found = True 
@@ -496,7 +466,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Term",LineNumber))
                             found = True 
@@ -513,7 +483,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Mul_Op",LineNumber))
                             found = True 
@@ -530,7 +500,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Factor",LineNumber))
                             found = True 
@@ -546,7 +516,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Comment",LineNumber))
                             found = True 
@@ -562,7 +532,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","Using",LineNumber))
                             found = True 
@@ -577,7 +547,7 @@ class Parser():
                 for token in p:
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
-                        # return print(LineToken)
+                        
                         if(LineToken == token):
                             print(self.Output_Formation("True","F_Name",LineNumber))
                             found = True 
@@ -589,34 +559,12 @@ class Parser():
 
             @self.pg.error
             def error_handle(token):
-                # raise ValueError("Total No of errors: 1")
-                raise ValueError(token)
-                # raise ValueError("No Match")
+                raise ValueError("Total No of errors: 1")
+                # raise ValueError(token)
                 
 
         def get_parser(self):
             return self.pg.build()
 
         def Output_Formation(self, isMatch, Rule, LineNumber):
-        # TokenLineNo = []
-        # ListOfLines = []
-        # for token in self.TokenStream:
-        #     TokenLineNo.append(token["Line No"])
-
-        # for LineNo in TokenLineNo:
-        #     if LineNo > LineNumber:
-        #         LineNumber = LineNo
-
-        # lineCount = 1
-        
-        # for line in range(LineNumber):
             print ("{:<20} {:<20} {:<20}".format(LineNumber, Rule, isMatch))
-        # singleLine = {
-        #     "Line NO": LineNumber,
-        #     "Matchability": isMatch,
-        #     "Rule Used": Rule
-        # }
-        
-            # ListOfLines.append(singleLine)
-            # lineCount += 1
-        # return singleLine
