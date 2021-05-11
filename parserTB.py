@@ -25,7 +25,7 @@ class Parser():
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Program",LineNumber))
+                            self.Output_Formation("True","Program",LineNumber)
                             found = True 
                             break              
                        
@@ -44,7 +44,7 @@ class Parser():
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Type",LineNumber))
+                            self.Output_Formation("True","Type",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -59,7 +59,7 @@ class Parser():
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Class_Decl",LineNumber))
+                            self.Output_Formation("True","Class_Decl",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -77,7 +77,7 @@ class Parser():
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Class_Imp",LineNumber))
+                            self.Output_Formation("True","Class_Imp",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -92,7 +92,7 @@ class Parser():
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Method_Declaration",LineNumber))
+                            self.Output_Formation("True","Method_Declaration",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -106,7 +106,7 @@ class Parser():
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Func_Decl",LineNumber))
+                            self.Output_Formation("True","Func_Decl",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -122,7 +122,7 @@ class Parser():
                     for key,value in SingleToken.items():
                         LineNumber, LineToken = value
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Par_List",LineNumber))
+                            self.Output_Formation("True","Par_List",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -138,7 +138,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Non_Empty_List",LineNumber))
+                            self.Output_Formation("True","Non_Empty_List",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -154,7 +154,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","ID_List",LineNumber))
+                            self.Output_Formation("True","ID_List",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -170,7 +170,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Var_Decl",LineNumber))
+                            self.Output_Formation("True","Var_Decl",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -186,7 +186,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Statements",LineNumber))
+                            self.Output_Formation("True","Statements",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -208,7 +208,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Statement",LineNumber))
+                            self.Output_Formation("True","Statement",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -224,7 +224,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Assignment",LineNumber))
+                            self.Output_Formation("True","Assignment",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -239,7 +239,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Func_Call",LineNumber))
+                            self.Output_Formation("True","Func_Call",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -255,7 +255,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Arg_List",LineNumber))
+                            self.Output_Formation("True","Arg_List",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -271,7 +271,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","NonEmpty_ArgList",LineNumber))
+                            self.Output_Formation("True","NonEmpty_ArgList",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -286,7 +286,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","BlockStatements",LineNumber))
+                            self.Output_Formation("True","BlockStatements",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -302,7 +302,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","WhetehrDo",LineNumber))
+                            self.Output_Formation("True","WhetehrDo",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -319,7 +319,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Cond_Expr",LineNumber))
+                            self.Output_Formation("True","Cond_Expr",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -335,7 +335,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Condition_Op",LineNumber))
+                            self.Output_Formation("True","Condition_Op",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -350,7 +350,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Condition",LineNumber))
+                            self.Output_Formation("True","Condition",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -371,7 +371,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Comp_Op",LineNumber))
+                            self.Output_Formation("True","Comp_Op",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -386,7 +386,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","RingWhen",LineNumber))
+                            self.Output_Formation("True","RingWhen",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -402,7 +402,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","BackedValue",LineNumber))
+                            self.Output_Formation("True","BackedValue",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -418,7 +418,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Terminate",LineNumber))
+                            self.Output_Formation("True","Terminate",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -435,7 +435,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Expression",LineNumber))
+                            self.Output_Formation("True","Expression",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -452,7 +452,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Add_Op",LineNumber))
+                            self.Output_Formation("True","Add_Op",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -468,7 +468,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Term",LineNumber))
+                            self.Output_Formation("True","Term",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -485,7 +485,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Mul_Op",LineNumber))
+                            self.Output_Formation("True","Mul_Op",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -502,7 +502,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Factor",LineNumber))
+                            self.Output_Formation("True","Factor",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -518,7 +518,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Comment",LineNumber))
+                            self.Output_Formation("True","Comment",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -534,7 +534,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","Using",LineNumber))
+                            self.Output_Formation("True","Using",LineNumber)
                             found = True 
                             break
                     if(found):
@@ -549,7 +549,7 @@ class Parser():
                         LineNumber, LineToken = value
                         
                         if(LineToken == token):
-                            print(self.Output_Formation("True","F_Name",LineNumber))
+                            self.Output_Formation("True","F_Name",LineNumber)
                             found = True 
                             break
                     if(found):
