@@ -4,22 +4,22 @@ import warnings
 warnings.filterwarnings("ignore")
 
 
-# lines = []
-# while True:
-#     line = input()
-#     if line:
-#         lines.append(line)
-#     elif line == "End":
-#         break
-#     else:
-#         break
-# text_input = '\n'.join(lines)
+lines = []
+while True:
+    line = input()
+    if line:
+        lines.append(line)
+    elif line == "End":
+        break
+    else:
+        break
+text_input = '\n'.join(lines)
 
-text_input = """
-Beginning;
-Division@main{Ire@X;};
-End
-"""
+# text_input = """
+# Beginning;
+# Division@main{Ire@X;};
+# End
+# """
 
 
 # text_input = """
